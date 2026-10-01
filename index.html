@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Gastos Personales</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO PRINCIPAL -->
+    <header>
+        <h1>CALCULADORA DE GASTOS PERSONALES</h1>
+        <p>Registra de manera inteligente tu economía domestica</p>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <!-- 1: FORMULARIO -->
+        <section id="seccion-formulario">
+            <h2>Registrar un nuevo gasto</h2>
+            <form id="form-gasto">
+                <div class="campo">
+                    <label for="concepto">Concepto / Detalle</label>
+                    <input 
+                        type="text" 
+                        id="concepto" 
+                        name="concepto" 
+                        placeholder="Ej: Alquiler, Comida súper, Gimnasio..." 
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="categoria">Categoría del gasto</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="">Elegir categoría...</option>
+                        <option value="Gasto Fijo">Gasto Fijo (Alquiler, servicios, plan móvil)</option>
+                        <option value="Variable Esencial">Variable Esencial (Comida, transporte, remedios)</option>
+                        <option value="Ocio y Gustos">Ocio y Gustos(Salidas, videojuegos, golosinas)</option>
+                        <option value="Cultura y Deporte">Cultura y Deporte (Libros, gym, conciertos)</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="monto">Monto ($)</label>
+                    <input 
+                        type="number" 
+                        id="monto" 
+                        name="monto" 
+                        placeholder="5000" 
+                        min="0.1" 
+                        step="0.01" 
+                        required
+                    >
+                </div>
+
+                <button type="submit" id="btn-agregar">Agregar gasto</button>
+                <p id="mensaje-error" class="error"></p>
+            </form>
+        </section>
+
+        <!-- 2: RESUMEN FINANCIERO -->
+        <section id="seccion-resumen">
+            <h2>Resumen Financiero</h2>
+            <div class="resumen-grid">
+                <div class="card-resumen fijo">
+                    <h3>Gastos Fijos</h3>
+                    <p id="total-fijos">$0.00</p>
+                </div>
+                <div class="card-resumen variable">
+                    <h3>Variables Esenciales</h3>
+                    <p id="total-variables">$0.00</p>
+                </div>
+                <div class="card-resumen ocio">
+                    <h3>Ocio y Gustos</h3>
+                    <p id="total-ocio">$0.00</p>
+                </div>
+                <div class="card-resumen cultura">
+                    <h3>Cultura y Deporte</h3>
+                    <p id="total-cultura">$0.00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3: TABLA DE REGISTROS -->
+        <section id="seccion-lista">
+            <h2>Lista de Gastos Totales</h2>
+            <table id="tabla-gastos"> 
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Categoría</th>
+                        <th class="texto-derecha">Monto</th>
+                        <th class="texto-centro">Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-tabla">
+                    <!-- Filas generadas dinamicamente con JS -->
+                </tbody>
+            </table>
+            <div class="pie-tabla"> 
+                <p id="total">Total general: <span id="total-general">$0.00</span></p>
+                <p id="alerta-recorte" class="subtexto-alerta"></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>TRABAJO PRACTICO INTEGRADOR MP &dash; PROGRAMACIÓN FRONTEND &dash; IPAP RÍO NEGRO</p> 
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

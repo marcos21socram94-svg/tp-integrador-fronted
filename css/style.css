@@ -1,0 +1,239 @@
+/* 1. VARIABLES GLOBALES Y RESETEO */
+:root {
+    --color-principal: #09bd57;
+    --color-secundario: #238323;
+    --color-fondo: #f4f6f8;
+    --color-texto: #121111;
+    --color-error: #ff0202;
+    --color-tarjeta: #ffffff;
+
+    /* Categorías financieras */
+    --color-fijo: #ec0e0e;
+    --color-variable: #f2962d;
+    --color-ocio: #f7e56d;
+    --color-cultura: #089bf6;
+
+    --fuente: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fuente);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.5;
+}
+
+/* 2. ENCABEZADO Y MAQUETACIÓN */
+header {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 24px 16px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+}
+
+header p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 16px;
+}
+
+section {
+    background-color: var(--color-tarjeta);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+    color: var(--color-principal);
+    margin-bottom: 16px;
+    font-size: 1.25rem;
+    border-bottom: 2px solid var(--color-fondo);
+    padding-bottom: 8px;
+}
+
+/* 3. FORMULARIO Y CONTROLES */
+.campo {
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+.campo input,
+.campo select {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.campo input:focus,
+.campo select:focus {
+    outline: 2px solid var(--color-principal);
+    border-color: transparent;
+}
+
+button[type="submit"] {
+    background-color: var(--color-principal);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--color-secundario);
+}
+
+.error {
+    color: var(--color-error);
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    min-height: 1.2em;
+}
+
+/* 4. TARJETAS DE RESUMEN GRID */
+.resumen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+}
+
+.card-resumen {  
+    background-color: #f8f9fa;
+    border-left: 5px solid #ccc;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.card-resumen h3 {
+    font-size: 0.85rem;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+.card-resumen p {
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.card-resumen.fijo { border-left-color: var(--color-fijo); }
+.card-resumen.variable { border-left-color: var(--color-variable); }
+.card-resumen.ocio { border-left-color: var(--color-ocio); }
+.card-resumen.cultura { border-left-color: var(--color-cultura); }
+
+/* 5. TABLA DE GASTOS */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+th {
+    background-color: var(--color-fondo);
+    font-weight: bold;
+}
+
+.texto-derecha { text-align: right; }
+.texto-centro { text-align: center; }
+
+/* BADGES DE CATEGORÍAS */
+.badge { 
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.80rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.badge-fijo { background-color: #fde8e8; color: var(--color-fijo); }
+.badge-variable { background-color: #fef3e7; color: var(--color-variable); }
+.badge-ocio { background-color: #fefbe8; color: #bfa100; }
+.badge-cultura { background-color: #e8f5fe; color: var(--color-cultura); }
+
+/* BOTÓN ELIMINAR */
+.boton-eliminar {
+    background: none;
+    border: none;
+    color: var(--color-error);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 4px 8px;
+}
+
+.boton-eliminar:hover {
+    opacity: 0.5;
+}
+
+/* PIE DE TABLA Y TOTALES */
+.pie-tabla {
+    text-align: right;
+    border-top: 2px solid var(--color-fondo);
+    padding: 12px;
+}
+
+#total {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--color-principal);
+}
+
+.subtexto-alerta { 
+    font-size: 0.80rem;
+    color: #2b8a3e;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+footer { 
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* ADAPTACIÓN MÓVIL */
+@media (max-width: 580px) {
+    header h1 { font-size: 1.4rem; }
+    main { padding: 10px 8px; }
+    section { padding: 14px; }
+    th, td { font-size: 0.8rem; padding: 8px 4px; }
+    .resumen-grid { grid-template-columns: 1fr 1fr; }
+}

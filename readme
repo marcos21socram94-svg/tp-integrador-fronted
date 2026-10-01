@@ -1,0 +1,9 @@
+Calculadora de gastos personales
+Registrar concepto, categoría y monto; validar los datos; mostrar los gastos en una
+lista; calcular el total; eliminar registros; conservar la información localmente
+
+
+JavaScript para la interactividad, los eventos, las validaciones y la manipulación del DOM./////
+Variables, arreglos, objetos, JSON y, cuando corresponda, localStorage para representar y conservar datos.//
+
+el CSS para la presentación visual, el modelo de caja y la adaptación a diferentes pantallas.//
